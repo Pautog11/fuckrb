@@ -1,0 +1,31 @@
+rails new name-importmap
+
+gem file /on the mother folder
+#Bootstrap
+gem "bootstrap"
+#Use the sass to process Css
+gem "sassc-rails"
+
+then "bundle install" in cmd
+
+
+change the application.css to scss /app/assets/stylesheets
+@import "bootstrap";
+
+/config/importmap.rb
+under controlers
+pin "popper", to: 'popper.js', preload: true
+pin "bootstrap", to: 'bootstrap.min.js', preload: true
+
+app/javascript/application.js
+import "popper"
+import "bootstrap"
+
+config/initializers/assets.rb
+Rails.application.config.assets.precompile += %w( bootstrap.min.js popper.js )
+
+then insert navbar form bootstrap and link for css
+
+
+https://www.youtube.com/watch?v=ZZAVy67YfPY&t=119s
+
